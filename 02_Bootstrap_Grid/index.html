@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Grid</title>
+  </head>
+  <body>
+    <!-- div.container>div.row -->
+    <h1>Default Grid Setup</h1>
+    <div class="container">
+      <div class="row">
+        <div>
+          <ol>
+            <li>
+              You can control the grid by the 'six-responsive breakpoints'
+            </li>
+            <li>Containers center and horizontally pad your content</li>
+            <li>
+              Rows are wrappers for columns -> Each column has horizontal
+              padding (called a gutter) for controlling the space in between
+              them. These 'gutters' can be modified via bootstrap modifiers
+            </li>
+            <li>
+              Columns are flexible -> There are 12 template columns available
+              per row, so you can create many different combinations of elements
+              that span any number of columns. Column classes indicate the
+              number of template columns to span (e.g, col-4, this column takes
+              up the span of 4). widths are set in percentages so you will
+              allways have the same relative sizing.
+            </li>
+            <li>
+              Gutters are also responsive and cutomizable -> Gutter classes are
+              available across all breakpoints,with all of the same sizes as our
+              'margin and padding spacing'. If you want to change horizontal
+              gutters use : .gx-* classes, use vertical gutters: .gy-* classes,
+              and you can use g-0 to remove gutters.
+            </li>
+          </ol>
+        </div>
+
+        <!-- bg-primary changes the background color to blue -->
+        <!-- border border-dark gives each column their own outline -->
+        <div class="col bg-primary border border-dark border-2">Column</div>
+        <div class="col bg-primary border border-dark border-2">Column</div>
+        <div class="col bg-primary border border-dark border-2">Column</div>
+      </div>
+
+      <h3 class="mt-4">Grid Options</h3>
+      <ul>
+        <li>Extra small(xs)</li>
+        <li>Small (s)</li>
+        <li>Medium (md)</li>
+        <li>Large (lg)</li>
+        <li>Extra Large (xl)</li>
+        <li>Extra extra large(xxl)</li>
+      </ul>
+
+      <h3 class="mt-4">Equal-width</h3>
+      <p>
+        Here are two layouts that apply to every device and viewport, from xs to
+        container-xxl.
+      </p>
+
+      <!-- div.container>div.row>div.col.bg-success.border-dark.border-2*2 -->
+      <div class="container">
+        <div class="row">
+          <div class="col bg-success border border-dark border-2">1 of 2</div>
+          <div class="col bg-success border border-dark border-2">2 of 2</div>
+        </div>
+        <div class="row">
+          <div class="col bg-warning border border-dark border-2">1 of 3</div>
+          <div class="col bg-warning border border-dark border-2">2 of 3</div>
+          <div class="col bg-warning border border-dark border-2">3 of 3</div>
+        </div>
+      </div>
+
+      <h3 class="mt-4">Setting one column width</h3>
+
+      <p>
+        We can change the value of one column and all of the sibling(s) will
+        dynamically adjust their sizes.
+      </p>
+
+      <!-- div.container>div.row>div.col.bg-secondary.border.border-dark.border-2*2 -->
+      <div class="container">
+        <div class="row">
+          <div class="col bg-secondary border border-dark border-2">1 of 3</div>
+          <div class="col-6 bg-secondary border border-dark border-2">
+            2 of 3
+          </div>
+          <div class="col bg-secondary border border-dark border-2">3 of 3</div>
+        </div>
+        <!-- div.row>div.col.bg-info.border.border.dark.border-2*3 -->
+        <div class="row">
+          <div class="col bg-info border border dark border-2">1 of 3</div>
+          <div class="col-5 bg-info border border dark border-2">2 of 3</div>
+          <div class="col bg-info border border dark border-2">3 of 3</div>
+        </div>
+      </div>
+
+      <h3 class="mt-4">Variable width content</h3>
+      <p>
+        Use col-{breakpoint}-auto classes to size colmns based on the natural
+        width of their content.
+      </p>
+      <!-- div.container>div.row.justify-content-md-center>div.col-lg-2.bg-danger.border.border-2.border-dark*3 -->
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-lg-2 bg-danger border border-2 border-dark">
+            1 of 3
+          </div>
+          <div class="col-md-auto bg-danger border border-2 border-dark">
+            Vaiable
+          </div>
+          <div class="col-lg-2 bg-danger border border-2 border-dark">
+            3 of 3
+          </div>
+        </div>
+
+        <!-- div.row>div.col.border.border-2.border-dark*3 -->
+        <div class="row">
+          <div class="col border border-2 border-dark">1 of 3</div>
+          <div class="col-md-auto border border-2 border-dark">
+            Lorem ipsum dolor sit
+          </div>
+          <div class="col col-lg-2 border border-2 border-dark">3 of 3</div>
+        </div>
+      </div>
+      <h3 class="mt-4">Responsive Classes</h3>
+      <p>We have 6 class that can help us make complex layouts</p>
+      <h3>All Breakpoints</h3>
+      <p>
+        default: .col, .col-* to specify a numbered class when you need a
+        particularly sixed column.
+      </p>
+
+      <!-- div.container>div.row>div.col.bg-info.border.border-3.border.dark*4 -->
+      <div class="container">
+        <div class="row">
+          <div class="col bg-info border border-2 border-dark">col</div>
+          <div class="col bg-info border border-2 border-dark">col</div>
+          <div class="col bg-info border border-2 border-dark">col</div>
+          <div class="col bg-info border border-2 border-dark">col</div>
+        </div>
+        <div class="row">
+          <div class="col-8 bg-warning border border-2 border-dark">col-8</div>
+          <div class="col-4 bg-warning border border-2 border-dark">col-4</div>
+        </div>
+      </div>
+
+      <h3 class="mt-4">Stacked and Horizontal</h3>
+      <p>
+        Using: .col-sm-* classes you can create a basic grid system that 
+        starts everyting as 'horizontal' at the small breakpoint.
+      </p>
+      <!-- div.container>div.row>div.col-sm-8.bg-success.border.border-2.border-dark*2 -->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 bg-success border border-2 border-dark">col-sm-8</div>
+          <div class="col-sm-4 bg-success border border-2 border-dark">col-sm-4</div>
+        </div>
+        <!-- div.row>div.col-sm.bg-primary.border.border-2.border-dark*3 -->
+        <div class="row">
+          <div class="col-sm bg-primary border border-2 border-dark">col-sm</div>
+          <div class="col-sm bg-primary border border-2 border-dark">col-sm</div>
+          <div class="col-sm bg-primary border border-2 border-dark">col-sm</div>
+        </div>
+      </div>
+      <h3 class="mt-4">Mix and Match</h3>
+      <!-- stack the columns on mobile by making one full-width and the other half width -->
+      <!-- div.container>div.row>div.col-md-8.bg-warning.border.border-2.border-dark*2 -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 bg-warning border border-2 border-dark">.col-md-8</div>
+          <div class="col-6 col-md-4 bg-warning border border-2 border-dark">.col-6 .col-md-4</div>
+        </div>
+      </div>
+      <!-- Columns start at 50% wide on mobile and bump up to 33.3% on desktop -->
+      <!-- div.row>div.col-6.col-md-4.bg-info.border.border-2.border-dark*3 -->
+      <div class="row">
+        <div class="col-6 col-md-4 bg-info border border-2 border-dark">.col-6 .col-md-4</div>
+        <div class="col-6 col-md-4 bg-info border border-2 border-dark">.col-6 .col-md-4</div>
+        <div class="col-6 col-md-4 bg-info border border-2 border-dark">.col-6 .col-md-4</div>
+      </div>
+      <!-- Columns are 50% wide on mobile and desktop -->
+      <!-- div.row>div.col-6.bg-danger.border.border-2.border-dark*2 -->
+      <div class="row">
+        <div class="col-6 bg-danger border border-2 border-dark">.col-6</div>
+        <div class="col-6 bg-danger border border-2 border-dark">.col-6</div>
+      </div>
+
+      <h3 class="mt-4">Row Columns</h3>
+      <p>
+        Use row-cols-* to quickly set the number of columns that will best render your content/layout.
+        This is set on the parent 'row' this works by using the columns natural width.
+      </p>
+      <!-- div.container>div.row.row-cols-2>div.col.border.border-2.border-dark*4 -->
+      <div class="container">
+        <div class="row row-cols-2">
+          <div class="col border border-2 border-dark">Column</div>
+          <div class="col border border-2 border-dark">Column</div>
+          <div class="col border border-2 border-dark">Column</div>
+          <div class="col border border-2 border-dark">Column</div>
+        </div>
+      </div>
+      <!-- div.container.mt-4>div.row.row-cols-3>div.col.border.border-2.border-primary*4 -->
+      <div class="container mt-4">
+        <div class="row row-cols-3">
+          <div class="col border border-2 border-primary">Column</div>
+          <div class="col border border-2 border-primary">Column</div>
+          <div class="col border border-2 border-primary">Column</div>
+          <div class="col border border-2 border-primary">Column</div>
+        </div>
+      </div>
+      <!-- div.container.m-4>div.row.row-cols-auto>div.col.border.border-2.border-secondary*4 -->
+      <div class="container m-4">
+        <div class="row row-cols-auto"><!--Auto if you want to 'smash elements together'-->
+          <div class="col border border-2 border-secondary">Column</div>
+          <div class="col border border-2 border-secondary">Column...</div>
+          <div class="col border border-2 border-secondary">Column</div>
+          <div class="col border border-2 border-secondary">Column.....</div>
+        </div>
+      </div>
+      <div class="container m-4">
+        <div class="row row-cols-4">
+          <div class="col border border-2 border-secondary">Column</div>
+          <div class="col border border-2 border-secondary">Column...</div>
+          <div class="col border border-2 border-secondary">Column</div>
+          <div class="col border border-2 border-secondary">Column.....</div>
+        </div>
+      </div>
+      <div class="container m-4">
+        <div class="row row-cols-auto">
+          <div class="col border border-2 border-secondary">Column</div>
+          <div class="col border border-2 border-secondary">Column</div>
+          <!-- This will take up the entire left space and the last column should be below this... -->
+          <div class="col-6 border border-2 border-secondary">Column</div>
+          <div class="col border border-2 border-secondary">Column</div>
+        </div>
+      </div>
+      <!-- div.container.mt-4>div.row.row-cols-1.row-cols-sm-2.row-cols-md-4>div.col.bg-info.border.border-2.border-dark*4 -->
+      <div class="container mt-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+          <div class="col bg-info border border-2 border-dark">Column</div>
+          <div class="col bg-info border border-2 border-dark">Column</div>
+          <div class="col bg-info border border-2 border-dark">Column</div>
+          <div class="col bg-info border border-2 border-dark">Column</div>
+        </div>
+      </div>
+      <h3 class="mt-4">Nesting</h3>
+      <p>
+        To nest your content with the default grid, and a new .row and set of .col-sm-* columns within an existing
+          .col-sm-* column. Nested rows should include a set of columns that add up to 12 or fewer 
+          (It's not a requirement that you use all 12 available columns )
+      </p>
+      <!-- div.container.border.border-2>div.row>div.col-sm-3.border.border-2+div.col-sm-9>div.col-8.col-sm-6.border.border-2*3 -->
+      <div class="container border border-2">
+        <div class="row">
+          <div class="col-sm-3 border border-2">
+            Level 1 : .col-sm-3
+          </div>
+          <div class="col-sm-9">
+            <div class="col-8 col-sm-6 border border-2 border-primary">
+              Level 2 : .col-8 .col-sm-6
+            </div>
+            <div class="col-4 col-sm-6 border border-2 border-primary">
+              Level 2 : .col-8 .col-sm-6
+            </div>
+            <div class="col-4 col-sm-6 border border-2 border-primary">
+              Level 2 : .col-8 .col-sm-6
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
